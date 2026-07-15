@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yanhee Hair Serum · ดีลวันนี้</title>
+
+<!-- ===== Link preview ตอนแชร์ใน Facebook / LINE ===== -->
+<!-- แก้ og:image เป็นลิงก์รูปสินค้าของคุณ (รูปแบบ lh3.googleusercontent.com/d/FILE_ID=w1200) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Yanhee Hair Serum · ดีลวันนี้">
+<meta property="og:description" content="รวมเซรั่มบำรุงผมยันฮีที่กำลังลดราคา เลือกสูตรที่ใช่ กดสั่งได้เลย">
+<meta property="og:image" content="https://lh3.googleusercontent.com/d/1HN5XtW0NbdBiSpikzOsdiop3FjQOZ5ST=w1200">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@500;600;700&family=Noto+Sans+Thai:wght@400;500;600&family=Prompt:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #1B1410;
+    --bg-card: #241A14;
+    --bronze: #C08A4E;
+    --gold: #D9B979;
+    --cream: #F3EAE0;
+    --sage: #8A9678;
+    --cream-dim: #C9BEB2;
+  }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    background: var(--bg);
+    color: var(--cream);
+    font-family: 'Noto Sans Thai', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  h1, h2, h3{ font-family:'Noto Serif Thai', serif; font-weight:600; }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position: relative;
+    min-height: 100svh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding: 40px 24px;
+    background:
+      radial-gradient(ellipse at 50% 20%, rgba(192,138,78,0.18), transparent 60%),
+      var(--bg);
+  }
+  .drop-stage{ position: relative; width: 120px; height: 160px; margin-bottom: 12px; }
+  .drop{
+    position:absolute;
+    top:0; left:50%;
+    width:14px; height:20px;
+    background: linear-gradient(180deg, var(--gold), var(--bronze));
+    border-radius: 0 50% 50% 50%;
+    transform: translateX(-50%) rotate(45deg);
+    animation: fall 2.6s cubic-bezier(.55,0,.85,.35) infinite;
+    box-shadow: 0 0 12px rgba(217,185,121,0.5);
+  }
+  @keyframes fall{
+    0%{ top:0; opacity:0; }
+    8%{ opacity:1; }
+    55%{ top:120px; opacity:1; }
+    58%{ opacity:0; }
+    100%{ opacity:0; top:120px; }
+  }
+  .ripple{
+    position:absolute;
+    bottom: 4px; left:50%;
+    width: 10px; height:4px;
+    border: 1.5px solid var(--gold);
+    border-radius: 50%;
+    transform: translateX(-50%);
+    opacity:0;
+    animation: ripple 2.6s ease-out infinite;
+  }
+  .ripple.r2{ animation-delay: 0.25s; }
+  @keyframes ripple{
+    0%, 53%{ opacity:0; width:10px; height:4px; }
+    58%{ opacity:0.8; width:10px; height:4px; }
+    100%{ opacity:0; width:90px; height:20px; }
+  }
+  .eyebrow{
+    font-family:'Prompt', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    color: var(--sage);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .hero h1{ font-size: clamp(28px, 7vw, 44px); color: var(--cream); max-width: 20ch; margin-bottom: 16px; }
+  .hero h1 em{ font-style: normal; color: var(--gold); }
+  .hero p{ color: var(--cream-dim); max-width: 42ch; font-size: 15px; margin-bottom: 28px; }
+  .scroll-hint{
+    font-family:'Prompt', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: var(--cream-dim);
+    text-transform: uppercase;
+    opacity: 0.6;
+  }
+
+  /* ---------- Sections ---------- */
+  .section{ max-width: 1080px; margin: 0 auto; padding: 60px 20px 40px; }
+  .section-head{ text-align:center; margin-bottom: 36px; }
+  .section-head .eyebrow{ margin-bottom: 8px; }
+  .section-head h2{ font-size: clamp(22px, 4vw, 30px); color: var(--cream); }
+
+  #products{ padding-bottom: 70px; }
+
+  .grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+  }
+  .card{
+    background: var(--bg-card);
+    border: 1px solid rgba(217,185,121,0.12);
+    border-radius: 14px;
+    overflow: hidden;
+    display:flex;
+    flex-direction: column;
+    transition: border-color 0.25s ease, transform 0.25s ease;
+  }
+  .card:hover{ border-color: rgba(217,185,121,0.4); transform: translateY(-3px); }
+  .card-img{
+    width:100%;
+    aspect-ratio: 1 / 1;
+    background: #2A1F18 center/cover no-repeat;
+    position: relative;
+  }
+  .badge{
+    position:absolute;
+    top:10px; left:10px;
+    background: var(--bronze);
+    color: var(--bg);
+    font-family:'Prompt', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 999px;
+  }
+  .card-body{ padding: 16px 18px 18px; display:flex; flex-direction:column; gap: 8px; flex:1; }
+  .card-title{ font-weight: 600; font-size: 15px; color: var(--cream); }
+  .card-desc{ font-size: 13px; color: var(--cream-dim); flex:1; }
+  .price-row{ display:flex; align-items: baseline; gap: 8px; margin-top: 4px; }
+  .price-now{ font-family:'Prompt', sans-serif; font-size: 20px; font-weight: 600; color: var(--gold); }
+  .price-old{ font-size: 13px; color: var(--cream-dim); text-decoration: line-through; opacity: 0.6; }
+  .cta{
+    display:block;
+    text-align:center;
+    margin-top: 10px;
+    padding: 11px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--bronze), var(--gold));
+    color: #1B1410;
+    font-family:'Prompt', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+  }
+  .cta:active{ opacity: 0.85; }
+
+  /* ---------- Reviews (ขนาดคงที่ ไม่ยืดเต็มจอ) ---------- */
+  #reviews-section{ display:none; padding-bottom: 80px; }
+  .review-grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 220px));
+    justify-content: center;
+    align-items: start;
+    gap: 18px;
+  }
+  .review{
+    background: var(--bg-card);
+    border: 1px solid rgba(217,185,121,0.12);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .review-img{
+    display:block;
+    width: 100%;
+    height: auto;
+    background: #2A1F18;
+  }
+  .review-cap{ padding: 10px 12px 12px; font-size: 12.5px; color: var(--cream-dim); }
+
+  .state-msg{ text-align:center; color: var(--cream-dim); font-size: 14px; padding: 40px 0; grid-column: 1 / -1; }
+
+  @media (prefers-reduced-motion: reduce){
+    .drop, .ripple{ animation: none; }
+  }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="drop-stage">
+    <div class="drop"></div>
+    <div class="ripple"></div>
+    <div class="ripple r2"></div>
+  </div>
+  <div class="eyebrow">Yanhee Hair Care</div>
+  <h1>บำรุงผมทุกเส้น ให้กลับมา<em>สุขภาพดี</em>อีกครั้ง</h1>
+  <p>รวมเซรั่มบำรุงผมยันฮีที่กำลังลดราคา เลือกสูตรที่ใช่ กดสั่งได้เลยจาก Shopee</p>
+  <div class="scroll-hint">เลื่อนดูดีลด้านล่าง ↓</div>
+</section>
+
+<section class="section" id="products">
+  <div class="section-head">
+    <div class="eyebrow">ดีลวันนี้</div>
+    <h2>สินค้าที่กำลังลดราคา</h2>
+  </div>
+  <div class="grid" id="product-grid">
+    <div class="state-msg">กำลังโหลดสินค้า…</div>
+  </div>
+</section>
+
+<section class="section" id="reviews-section">
+  <div class="section-head">
+    <div class="eyebrow">รีวิวจากผู้ใช้จริง</div>
+    <h2>ผลลัพธ์ที่เห็นได้</h2>
+  </div>
+  <div class="review-grid" id="review-grid"></div>
+</section>
+
+<script>
+  /* ===== แก้ URL นี้เป็น Web app URL ของคุณ (ลงท้ายด้วย /exec) ===== */
+  var WEBAPP_URL = "var WEBAPP_URL = "https://script.google.com/macros/s/AKfycbzjL0cKggv0QgdZwm96MtMknLRWvHmz3J9RXEvbcxYKPtRg_VuAo7OcSBJvQq_Sg2da/exec";";
+
+  var grid = document.getElementById('product-grid');
+  var reviewSection = document.getElementById('reviews-section');
+  var reviewGrid = document.getElementById('review-grid');
+
+  function escapeHtml(str){
+    return String(str === null || str === undefined ? '' : str)
+      .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+      .replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+  }
+
+  // แปลงลิงก์ Google Drive ทุกรูปแบบให้เป็นลิงก์รูปที่แสดงผลได้จริง
+  function imgUrl(raw, width){
+    var s = String(raw === null || raw === undefined ? '' : raw).trim();
+    if(!s) return '';
+    var m = s.match(/\/d\/([-\w]{25,})/)
+         || s.match(/[?&]id=([-\w]{25,})/)
+         || s.match(/^([-\w]{25,})$/);
+    if(m) return 'https://lh3.googleusercontent.com/d/' + m[1] + '=w' + (width || 800);
+    return s;
+  }
+
+  function renderProducts(products){
+    if(!products || products.length === 0){
+      grid.innerHTML = '<div class="state-msg">ยังไม่มีสินค้าที่เปิดแสดงตอนนี้</div>';
+      return;
+    }
+    var html = '';
+    for(var i=0; i<products.length; i++){
+      var p = products[i];
+      var promo = Number(p.PromoPrice);
+      var full = Number(p.Price);
+      var hasPromo = promo > 0 && promo < full;
+      var priceNow = hasPromo ? p.PromoPrice : p.Price;
+
+      html += '<div class="card">'
+        + '<div class="card-img" style="background-image:url(\'' + escapeHtml(imgUrl(p.ImageURL, 800)) + '\')">'
+        + (p.Badge ? '<span class="badge">' + escapeHtml(p.Badge) + '</span>' : '')
+        + '</div>'
+        + '<div class="card-body">'
+        + '<div class="card-title">' + escapeHtml(p.ProductName) + '</div>'
+        + (p.Description ? '<div class="card-desc">' + escapeHtml(p.Description) + '</div>' : '')
+        + '<div class="price-row">'
+        + '<span class="price-now">฿' + escapeHtml(priceNow) + '</span>'
+        + (hasPromo ? '<span class="price-old">฿' + escapeHtml(p.Price) + '</span>' : '')
+        + '</div>'
+        + '<a class="cta" href="' + escapeHtml(p.AffiliateLink) + '" target="_blank" rel="noopener sponsored">ดูสินค้า</a>'
+        + '</div></div>';
+    }
+    grid.innerHTML = html;
+  }
+
+  function renderReviews(reviews){
+    if(!reviews || reviews.length === 0) return;
+    var html = '';
+    for(var i=0; i<reviews.length; i++){
+      var r = reviews[i];
+      var img = imgUrl(r.ReviewImage, 600);
+      if(!img) continue;
+      html += '<div class="review">'
+        + '<img class="review-img" loading="lazy" alt="รีวิวจากผู้ใช้" src="' + escapeHtml(img) + '">'
+        + (r.Caption ? '<div class="review-cap">' + escapeHtml(r.Caption) + '</div>' : '')
+        + '</div>';
+    }
+    if(!html) return;
+    reviewGrid.innerHTML = html;
+    reviewSection.style.display = 'block';
+  }
+
+  function onData(data){
+    if(!data){ onError('ไม่มีข้อมูลส่งกลับมา'); return; }
+    renderProducts(data.products);
+    renderReviews(data.reviews);
+  }
+
+  function onError(msg){
+    grid.innerHTML = '<div class="state-msg">โหลดสินค้าไม่สำเร็จ: ' + escapeHtml(msg) + '</div>';
+  }
+
+  // สำรอง: ถ้า fetch โดนบล็อก จะสลับไปใช้ JSONP อัตโนมัติ
+  function loadViaJsonp(){
+    window.__yanheeData = function(data){ onData(data); };
+    var s = document.createElement('script');
+    s.src = WEBAPP_URL + '?type=data&callback=__yanheeData';
+    s.onerror = function(){ onError('เชื่อมต่อ Backend ไม่ได้ ตรวจสอบ WEBAPP_URL'); };
+    document.body.appendChild(s);
+  }
+
+  if(WEBAPP_URL.indexOf('http') !== 0){
+    onError('ยังไม่ได้ใส่ WEBAPP_URL ในไฟล์ index.html');
+  } else {
+    fetch(WEBAPP_URL + '?type=data')
+      .then(function(res){ return res.json(); })
+      .then(onData)
+      .catch(loadViaJsonp);
+  }
+</script>
+
+</body>
+</html>
