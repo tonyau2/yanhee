@@ -229,7 +229,7 @@
 
 <script>
   /* ===== แก้ URL นี้เป็น Web app URL ของคุณ (ลงท้ายด้วย /exec) ===== */
-  var WEBAPP_URL = "var WEBAPP_URL = "https://script.google.com/macros/s/AKfycbzjL0cKggv0QgdZwm96MtMknLRWvHmz3J9RXEvbcxYKPtRg_VuAo7OcSBJvQq_Sg2da/exec";";
+  var WEBAPP_URL = "https://script.google.com/macros/s/AKfycbzjL0cKggv0QgdZwm96MtMknLRWvHmz3J9RXEvbcxYKPtRg_VuAo7OcSBJvQq_Sg2da/exec";
 
   var grid = document.getElementById('product-grid');
   var reviewSection = document.getElementById('reviews-section');
@@ -309,23 +309,30 @@
     grid.innerHTML = '<div class="state-msg">โหลดสินค้าไม่สำเร็จ: ' + escapeHtml(msg) + '</div>';
   }
 
-  // สำรอง: ถ้า fetch โดนบล็อก จะสลับไปใช้ JSONP อัตโนมัติ
-  function loadViaJsonp(){
-    window.__yanheeData = function(data){ onData(data); };
-    var s = document.createElement('script');
-    s.src = WEBAPP_URL + '?type=data&callback=__yanheeData';
-    s.onerror = function(){ onError('เชื่อมต่อ Backend ไม่ได้ ตรวจสอบ WEBAPP_URL'); };
-    document.body.appendChild(s);
-  }
+  // โหลดข้อมูลด้วย JSONP (วิธีที่ใช้ได้ข้ามโดเมนแน่นอน)
+  var loaded = false;
 
-  if(WEBAPP_URL.indexOf('http') !== 0){
-    onError('ยังไม่ได้ใส่ WEBAPP_URL ในไฟล์ index.html');
-  } else {
-    fetch(WEBAPP_URL + '?type=data')
-      .then(function(res){ return res.json(); })
-      .then(onData)
-      .catch(loadViaJsonp);
-  }
+  window.__yanheeData = function(data){
+    loaded = true;
+    try { onData(data); }
+    catch(err){ onError('แสดงผลไม่สำเร็จ: ' + err.message); }
+  };
+
+  window.onerror = function(msg){
+    if(!loaded) onError('โค้ดมีปัญหา: ' + msg);
+  };
+
+  (function loadData(){
+    var s = document.createElement('script');
+    s.src = WEBAPP_URL + '?type=data&callback=__yanheeData&t=' + Date.now();
+    s.onerror = function(){ onError('เชื่อมต่อ Backend ไม่ได้'); };
+    document.body.appendChild(s);
+
+    setTimeout(function(){
+      if(!loaded) onError('หมดเวลารอข้อมูล (Backend ไม่ตอบกลับ)');
+    }, 15000);
+  })();
+
 </script>
 
 </body>
